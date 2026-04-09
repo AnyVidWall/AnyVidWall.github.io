@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - AnyVidWall | BSR Studios</title>
+    
+    <meta name="description" content="Learn more about BSR Studios, the creators of AnyVidWall. We build efficient, resource-friendly software for every PC.">
+    <meta name="author" content="BSR Studios">
+    
+    <link rel="icon" type="image/png" href="https://github.com/AryanMewada/Resources/raw/main/AnyVidWall.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #0f1115;
+            --surface: #181b21;
+            --surface-light: #22262f;
+            --primary: #4f46e5;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border: rgba(255, 255, 255, 0.08);
+            --accent: #10b981;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        
+        body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.7; overflow-x: hidden; }
+
+        /* Navigation - Unlocked (Relative position) */
+        nav { 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between;
+            padding: 15px 5%; 
+            background: rgba(15, 17, 21, 0.8); 
+            border-bottom: 1px solid var(--border); 
+            position: relative; 
+            z-index: 100; 
+        }
+        .nav-left { flex: 1; display: flex; align-items: center; }
+        .nav-left img { width: 38px; height: 38px; border-radius: 50%; object-fit: cover; }
+        
+        .nav-center { flex: 1; display: flex; justify-content: center; font-weight: 800; font-size: 1.3rem; color: var(--text-main); letter-spacing: -0.5px; }
+        
+        .nav-right { flex: 1; display: flex; justify-content: flex-end; }
+        .btn-back { background: rgba(79, 70, 229, 0.1); color: var(--primary); padding: 8px 20px; border-radius: 8px; text-decoration: none; font-size: 0.95rem; font-weight: 600; border: 1px solid rgba(79, 70, 229, 0.2); transition: all 0.2s; }
+        .btn-back:hover { background: var(--primary); color: white; }
+
+        /* Container */
+        .container { max-width: 800px; margin: 60px auto; padding: 0 20px; }
+
+        /* Header */
+        .page-header { margin-bottom: 40px; text-align: center; }
+        .page-header h1 { font-size: 2.8rem; font-weight: 800; margin-bottom: 15px; color: white; }
+        .page-header p { color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+
+        /* Content Card */
+        .content-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 40px; }
+        
+        .policy-section { margin-bottom: 35px; }
+        .policy-section:last-child { margin-bottom: 0; }
+        .policy-section h2 { font-size: 1.5rem; font-weight: 700; margin-bottom: 15px; color: white; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+        .policy-section p { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 15px; }
+        .policy-section strong { color: var(--text-main); }
+
+        /* Footer */
+        footer { border-top: 1px solid var(--border); padding: 40px 20px; text-align: center; margin-top: 60px; color: var(--text-muted); font-size: 0.9rem; }
+
+        @media (max-width: 768px) {
+            .nav-center { display: none; }
+            .content-card { padding: 25px; }
+            .page-header h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-left">
+            <a href="https://bsr-studios.github.io/">
+                <img src="https://bsr-studios.github.io/logo.png" alt="BSR Studios Logo" onerror="this.src='https://via.placeholder.com/38x38/181b21/fff?text=BSR'">
+            </a>
+        </div>
+        <div class="nav-center">
+            BSR Studios
+        </div>
+        <div class="nav-right">
+            <a href="/" class="btn-back">← Back to Home</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-header">
+            <h1>About Us</h1>
+            <p>Discover the team and philosophy behind AnyVidWall.</p>
+        </div>
+
+        <div class="content-card">
+            
+            <div class="policy-section">
+                <h2>Who We Are</h2>
+                <p>Welcome! <strong>AnyVidWall</strong> is a flagship product proudly owned and developed by <strong>BSR Studios</strong>. We are an independent software development studio focused on creating highly efficient, resource-friendly digital tools for everyday users.</p>
+            </div>
+
+            <div class="policy-section">
+                <h2>Our Mission</h2>
+                <p>In today's software landscape, many modern applications assume that users have access to high-end hardware with abundant RAM and processing power. We know that is simply not the reality for millions of users worldwide.</p>
+                <p>Our mission is to bridge that gap. We believe that reliable, beautifully engineered software should be accessible to everyone, regardless of their PC specifications. We focus on building utilities that respect your hardware limitations.</p>
+            </div>
+
+            <div class="policy-section">
+                <h2>The Story Behind AnyVidWall</h2>
+                <p>Everyone wants an aesthetic desktop setup, but traditional live wallpaper engines are often bloated with heavy web frameworks that consume massive amounts of background memory. Customizing your desktop environment shouldn't come at the cost of system performance.</p>
+                <p>That is why we created <strong>AnyVidWall</strong>. Instead of relying on web-based wrappers, we built AnyVidWall utilizing the optimized VLC Media Engine. This allows the app to deliver stunning video motion backgrounds while keeping the CPU and RAM footprint absolutely minimal. It’s the perfect customization tool for budget setups, laptops, and serious gamers who don't want to sacrifice framerates for aesthetics.</p>
+            </div>
+
+            <div class="policy-section">
+                <h2>Our Development Approach</h2>
+                <p>To achieve peak performance, we prioritize efficient coding practices. While many modern desktop applications rely on heavy frameworks, BSR Studios focuses on native processing and optimized hardware acceleration. By building closer to the hardware level, we ensure that our applications provide smooth functionality without unnecessary background processes.</p>
+                <p>Thank you for choosing AnyVidWall and supporting independent software development!</p>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 BSR Studios. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
