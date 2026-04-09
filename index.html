@@ -3,357 +3,336 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnyVidWall | Free Video Live Wallpaper for Low-End PCs</title>
     
-    <link rel="canonical" href="https://bsr-studios.github.io/apps/AnyVidWall.html" />
-
-    <title>AnyVidWall - Efficient Video Wallpaper App for PC</title>
-    
-    <meta name="description" content="Download AnyVidWall, a lightweight video live wallpaper software for Windows. Set MP4, MKV, or AVI files as your desktop background on entry-level systems.">
-    
-    <meta name="keywords" content="AnyVidWall, AnyVidWall Download, Free Video Wallpaper App, Wallpaper Engine Alternative, Live Wallpaper for Windows 10, Set Video as Wallpaper, Motion Desktop Background, Low Resource Wallpaper, Efficient CPU Usage Wallpaper, Play Video on Desktop, Animated Backgrounds for Budget PC, Background Loop Player, Lightweight Wallpaper App, Windows live wallpaper, video wallpaper app for pc, live wallpaper app download for pc, Best Live Wallpaper App For PC, live wallpaper app for low end pc, anyvidwall live wallpaper app, Anime live wallpaper, vlc engine wallpaper, mp4 to wallpaper, mkv wallpaper, avi wallpaper, BSR Studios software, pc customization, aesthetic pc setup, pc optimization tools, free desktop modding, BSR apps">
-    
+    <meta name="description" content="Download AnyVidWall, a lightweight video live wallpaper app for Windows. Set MP4, MKV, or AVI videos as your background. Optimized for low-end PCs.">
     <meta name="author" content="BSR Studios">
-    <meta name="robots" content="index, follow">
-
-    <meta property="og:type" content="software">
-    <meta property="og:title" content="AnyVidWall - Lightweight Live Wallpaper for PC">
-    <meta property="og:description" content="Turn any video into a wallpaper efficiently. Optimized for smooth performance on entry-level systems.">
-    <meta property="og:image" content="https://github.com/AryanMewada/Resources/raw/main/AnyVidWall.png">
     
     <link rel="icon" type="image/png" href="https://github.com/AryanMewada/Resources/raw/main/AnyVidWall.png">
-    <link rel="apple-touch-icon" href="https://github.com/AryanMewada/Resources/raw/main/AnyVidWall.png">
-
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
-        :root { --bg: #0b1120; --surface: #1e293b; --primary: #3b82f6; --primary-hover: #2563eb; --text-main: #ffffff; --text-muted: #94a3b8; --border: rgba(255,255,255,0.05); }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
-        body { background-color: var(--bg); color: var(--text-main); line-height: 1.6; min-height: 100vh; display: flex; flex-direction: column; overflow-x: hidden; }
-        
-        nav { 
-            display: flex; justify-content: space-between; align-items: center; 
-            padding: 10px 30px; 
-            background: rgba(11, 17, 32, 0.95); backdrop-filter: blur(12px); 
-            border-bottom: 1px solid var(--border); 
-            position: sticky; top: 0; z-index: 1000; 
+        :root {
+            --bg-color: #0f1115;
+            --surface: #181b21;
+            --surface-light: #22262f;
+            --primary: #4f46e5;
+            --primary-hover: #4338ca;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border: rgba(255, 255, 255, 0.08);
+            --accent: #10b981;
         }
-        .nav-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: white; }
-        .nav-brand img { height: 32px; width: 32px; border-radius: 50%; object-fit: cover; }
-        .nav-brand-text { font-size: 1.15rem; font-weight: 800; letter-spacing: -0.5px; }
-        
-        .nav-links { display: flex; gap: 20px; align-items: center; }
-        .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 600; transition: 0.3s; }
-        .nav-links a:hover { color: var(--text-main); }
-        .nav-btn { background: rgba(59, 130, 246, 0.15); color: #60a5fa !important; padding: 6px 16px; border-radius: 100px; border: 1px solid rgba(59, 130, 246, 0.3); }
-        .nav-btn:hover { background: #3b82f6; color: white !important; }
 
-        .container { max-width: 900px; margin: 40px auto; padding: 0 20px; flex: 1; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
         
-        /* Header & Download Box */
-        .app-header { text-align: center; margin-bottom: 30px; }
-        .app-icon { width: 130px; height: 130px; border-radius: 25%; object-fit: cover; border: 2px solid var(--surface); box-shadow: 0 0 30px rgba(59, 130, 246, 0.2); margin-bottom: 20px; }
-        .app-title { font-size: 2.5rem; font-weight: 800; margin-bottom: 10px; color: white;}
-        .app-desc { color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+        body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.7; overflow-x: hidden; }
 
-        .download-box { background: var(--surface); padding: 40px; border-radius: 24px; border: 1px solid var(--border); text-align: center; margin-bottom: 40px;}
-        .live-counter { font-size: 1.1rem; font-weight: 700; color: #fcd34d; margin-bottom: 15px; display: inline-flex; align-items: center; background: rgba(252, 211, 77, 0.1); padding: 8px 20px; border-radius: 100px; border: 1px solid rgba(252, 211, 77, 0.2); }
-        .btn-group { display: flex; flex-direction: column; gap: 15px; align-items: center; margin: 20px 0; }
-        .btn-download { display: inline-flex; align-items: center; justify-content: center; background: var(--primary); color: white; font-size: 1.2rem; font-weight: 700; padding: 16px 40px; border-radius: 100px; text-decoration: none; transition: 0.3s; width: 100%; max-width: 350px; box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3); }
-        .btn-download:hover { background: var(--primary-hover); transform: translateY(-3px); }
-        .info-tag { font-size: 0.9rem; color: var(--text-muted); display: block; }
-
-        /* Software Sections Styling */
-        .section-block { background: rgba(30, 41, 59, 0.4); padding: 40px; border-radius: 24px; border: 1px solid var(--border); margin-bottom: 40px; }
-        .section-title { color: white; font-size: 1.6rem; margin-bottom: 20px; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
-        .section-text { color: var(--text-muted); font-size: 1.05rem; line-height: 1.8; margin-bottom: 15px;}
+        /* Navigation - Unlocked (Relative) */
+        nav { 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between;
+            padding: 15px 5%; 
+            background: rgba(15, 17, 21, 0.8); 
+            border-bottom: 1px solid var(--border); 
+            position: relative; 
+            z-index: 100; 
+        }
+        .nav-left { flex: 1; display: flex; align-items: center; }
+        .nav-left img { width: 38px; height: 38px; border-radius: 50%; object-fit: cover; }
         
+        .nav-center { flex: 1; display: flex; justify-content: center; font-weight: 800; font-size: 1.3rem; color: var(--text-main); letter-spacing: -0.5px; }
+        
+        .nav-right { flex: 1; display: flex; justify-content: flex-end; gap: 20px; }
+        .nav-right a { color: var(--text-muted); text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: color 0.2s; }
+        .nav-right a:hover { color: var(--text-main); }
+
+        /* Container */
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+
+        /* Hero Section */
+        .hero { text-align: center; padding: 50px 0; }
+        .hero-badge { display: inline-block; background: rgba(16, 185, 129, 0.1); color: var(--accent); padding: 6px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 600; margin-bottom: 20px; border: 1px solid rgba(16, 185, 129, 0.2); }
+        .hero h1 { font-size: 3.5rem; font-weight: 800; line-height: 1.1; margin-bottom: 20px; background: linear-gradient(to right, #fff, #94a3b8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p { font-size: 1.2rem; color: var(--text-muted); max-width: 700px; margin: 0 auto 40px; }
+        
+        /* Download Area */
+        .download-card { background: linear-gradient(145deg, var(--surface), var(--bg-color)); border: 1px solid var(--border); border-radius: 24px; padding: 40px; text-align: center; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); position: relative; }
+        
+        /* App Logo inside Download Box */
+        .dl-app-logo { width: 90px; height: 90px; border-radius: 50%; object-fit: cover; margin: 0 auto 20px auto; display: block; border: 2px solid rgba(255,255,255,0.1); box-shadow: 0 10px 25px rgba(0,0,0,0.4); }
+        
+        .btn-download { display: inline-block; background: var(--primary); color: white; padding: 18px 45px; border-radius: 12px; font-size: 1.1rem; font-weight: 600; text-decoration: none; transition: all 0.2s; box-shadow: 0 10px 25px rgba(79, 70, 229, 0.3); }
+        .btn-download:hover { background: var(--primary-hover); transform: translateY(-2px); box-shadow: 0 15px 30px rgba(79, 70, 229, 0.4); }
+        .stats { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; margin-top: 25px; color: var(--text-muted); font-size: 0.95rem; }
+
+        /* Sections */
+        section { margin-top: 60px; }
+        .sec-title { font-size: 2rem; font-weight: 700; margin-bottom: 25px; color: var(--text-main); display: flex; align-items: center; gap: 15px; }
+        .sec-title::before { content: ''; display: block; width: 8px; height: 30px; background: var(--primary); border-radius: 4px; }
+        
+        .card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 30px; }
+        
+        /* Grid Layouts */
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        
+        /* Features List */
+        .feature-list { list-style: none; }
+        .feature-list li { margin-bottom: 15px; padding-left: 30px; position: relative; color: var(--text-muted); }
+        .feature-list li::before { content: '✓'; position: absolute; left: 0; top: 0; color: var(--primary); font-weight: bold; }
+        .feature-list strong { color: var(--text-main); }
+
         /* Screenshots Grid */
-        .screenshot-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px; }
-        .screenshot-grid img { width: 100%; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 5px 15px rgba(0,0,0,0.3); transition: 0.3s; cursor: pointer; }
-        .screenshot-grid img:hover { transform: scale(1.02); border-color: var(--primary); }
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .gallery img { width: 100%; height: auto; border-radius: 12px; cursor: zoom-in; transition: transform 0.2s; border: 1px solid var(--border); }
+        .gallery img:hover { transform: scale(1.02); border-color: var(--primary); }
 
-        /* Two Column Layouts */
-        .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px; }
-        @media (max-width: 768px) { .two-col { grid-template-columns: 1fr; } }
-        
-        .spec-box { background: rgba(15, 23, 42, 0.6); padding: 20px; border-radius: 12px; border: 1px solid var(--border); }
-        .spec-box h4 { color: #60a5fa; margin-bottom: 10px; font-size: 1.1rem; }
-        .spec-box ul { list-style: none; padding: 0; color: var(--text-muted); font-size: 0.95rem; }
-        .spec-box li { margin-bottom: 8px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.02); }
-        .spec-box li:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        /* How to use Tabs */
+        .tab-box { background: var(--surface-light); padding: 20px; border-radius: 12px; margin-bottom: 15px; border-left: 4px solid var(--primary); }
+        .tab-box h4 { color: var(--text-main); margin-bottom: 5px; font-size: 1.1rem; }
+        .tab-box p { color: var(--text-muted); font-size: 0.95rem; margin: 0; }
 
-        /* Lists & Steps */
-        .step-list { counter-reset: steps; list-style: none; padding: 0; margin-top: 20px; }
-        .step-list li { position: relative; padding-left: 45px; margin-bottom: 20px; color: var(--text-muted); font-size: 1.05rem; }
-        .step-list li::before { counter-increment: steps; content: counter(steps); position: absolute; left: 0; top: 0; width: 30px; height: 30px; background: rgba(59, 130, 246, 0.2); color: #60a5fa; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 0.9rem; border: 1px solid rgba(59, 130, 246, 0.4); }
-        .step-list strong { color: white; }
+        /* Specs */
+        .spec-table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        .spec-table th, .spec-table td { padding: 12px; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.95rem; }
+        .spec-table th { color: var(--primary); width: 30%; }
+        .spec-table td { color: var(--text-muted); }
 
-        /* FAQ */
-        .faq-item { margin-bottom: 20px; }
-        .faq-q { color: white; font-weight: 700; font-size: 1.1rem; margin-bottom: 5px; }
-        .faq-a { color: var(--text-muted); font-size: 1rem; }
+        /* Lightbox */
+        #lightbox { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.9); display: none; justify-content: center; align-items: center; z-index: 9999; cursor: zoom-out; }
+        #lightbox img { max-width: 90%; max-height: 90%; border-radius: 8px; box-shadow: 0 0 50px rgba(0,0,0,0.5); }
 
-        /* Warning/Info Boxes */
-        .alert-box { background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 12px; padding: 15px 20px; margin-top: 20px; color: #fca5a5; font-size: 0.95rem; }
-        .alert-box strong { color: #f87171; display: block; margin-bottom: 5px; font-size: 1.05rem;}
-        
-        .info-box { background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 12px; padding: 15px 20px; margin-top: 20px; color: #bfdbfe; font-size: 0.95rem; }
-        .info-box strong { color: #60a5fa; display: block; margin-bottom: 5px; font-size: 1.05rem;}
-
-        footer { border-top: 1px solid var(--border); padding: 50px 20px; text-align: center; margin-top: auto; background: #080c17; }
-        .footer-nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; margin-bottom: 20px; }
-        .footer-nav a { color: var(--text-muted); text-decoration: none; font-size: 0.95rem; transition: color 0.3s; }
+        /* Footer Customization */
+        footer { border-top: 1px solid var(--border); padding: 40px 20px; text-align: center; margin-top: 80px; color: var(--text-muted); font-size: 0.95rem; }
+        .footer-nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 25px; margin-bottom: 25px; }
+        .footer-nav a { color: var(--text-muted); text-decoration: none; font-weight: 500; transition: color 0.2s; }
         .footer-nav a:hover { color: var(--primary); }
-        .copyright { color: rgba(255, 255, 255, 0.2); font-size: 0.85rem; }
 
         @media (max-width: 768px) {
-            nav { flex-direction: column; padding: 15px; gap: 15px; }
-            .nav-links { flex-wrap: wrap; justify-content: center; }
-            .section-block { padding: 25px 20px; }
+            .hero h1 { font-size: 2.5rem; }
+            .grid-2 { grid-template-columns: 1fr; }
+            .nav-center { font-size: 1.1rem; }
+            .nav-right { display: none; }
         }
     </style>
 </head>
 <body>
 
-    <nav aria-label="Main Navigation">
-        <a href="../" class="nav-brand" aria-label="BSR Studios Home">
-            <img src="../logo.jpg" alt="BSR Studios Logo">
-            <span class="nav-brand-text">BSR Studios</span>
-        </a>
-        <div class="nav-links">
-            <a href="../">Home</a>
-            <a href="../apps.html">All Apps</a>
-            <a href="https://github.com/BSR-Studios" target="_blank" rel="noopener noreferrer" class="nav-btn">View GitHub</a>
+    <nav>
+        <div class="nav-left">
+            <a href="https://bsr-studios.github.io/">
+                <img src="https://bsr-studios.github.io/logo.png" alt="BSR Studios Logo" onerror="this.src='https://via.placeholder.com/38x38/181b21/fff?text=BSR'">
+            </a>
+        </div>
+        <div class="nav-center">
+            BSR Studios
+        </div>
+        <div class="nav-right">
+            <a href="#features">Features</a>
+            <a href="#guide">How to Use</a>
+            <a href="#faq">FAQ</a>
         </div>
     </nav>
 
     <div class="container">
         
-        <header class="app-header">
-            <img src="https://github.com/AryanMewada/Resources/raw/main/AnyVidWall.png" alt="AnyVidWall App Icon" class="app-icon">
-            <h1 class="app-title">AnyVidWall</h1>
-            <p class="app-desc">
-                An efficient video live wallpaper application for Windows. Built utilizing the VLC media engine to maintain stable performance on budget PCs with limited RAM.
-            </p>
+        <header class="hero">
+            <span class="hero-badge">v1.2.0 is out now!</span>
+            <h1>Free Live Wallpaper<br>For Low-End PCs</h1>
+            <p>Transform your desktop with stunning video wallpapers. Powered by the VLC engine, AnyVidWall delivers beautiful moving backgrounds without slowing down your system.</p>
+            
+            <div class="download-card">
+                <img src="https://github.com/AryanMewada/Resources/raw/main/AnyVidWall.png" alt="AnyVidWall Logo" class="dl-app-logo">
+                
+                <h2 style="margin-bottom: 20px; font-size: 1.6rem;">Download AnyVidWall</h2>
+                <a href="https://bsr-download-tracker.aryanmewadastudios.workers.dev/download/anyvidwall" class="btn-download" onclick="triggerDownload()">Download for Windows</a>
+                
+                <div class="stats">
+                    <span id="downloadCount">🔥 Loading downloads...</span>
+                    <span>• Windows 7/10/11</span>
+                    <span style="color: #60a5fa; font-weight: 600;">• Size: 43.1 MB</span>
+                    <span>• 100% Free</span>
+                </div>
+            </div>
         </header>
 
-        <div class="download-box">
-            <h2 style="font-size: 1.4rem; margin-bottom: 10px; color: white;">Download Latest Version</h2>
-            
-            <div style="margin: 15px auto;">
-                <div class="live-counter" id="downloadCountDisplay">🔥 Downloads: Loading...</div>
-            </div>
-            
-            <div class="btn-group">
-                <a href="https://bsr-download-tracker.aryanmewadastudios.workers.dev/download/anyvidwall" target="_blank" rel="noopener noreferrer" class="btn-download" onclick="incrementDownloadUi()">
-                    Download for Windows
-                </a>
-            </div>
-            
-            <span class="info-tag">Version 1.0.0 • Windows 7/10/11 • Free</span>
-
-            <div class="info-box" style="max-width: 500px; margin: 15px auto 0; text-align: left;">
-                <strong>🛡️ Installation Notice</strong>
-                As this is an independently developed application, Windows Defender SmartScreen might display a prompt during installation. You can proceed by clicking <b>'More info'</b> and then <b>'Run anyway'</b>.
-            </div>
-        </div>
-
-        <div class="bsr-horizontal-ad" style="width: 100%; max-width: 800px; margin: 0 auto 40px; text-align: center; background: rgba(255,255,255,0.02); border-radius: 8px; padding: 10px;">
-            <span style="font-size: 10px; color: #94a3b8; display: block; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">Advertisement</span>
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1032421976701438" crossorigin="anonymous"></script>
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-1032421976701438"
-                 data-ad-slot="5645597669"
-                 data-ad-format="horizontal"
-                 data-full-width-responsive="true"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-        </div>
-
-        <section class="section-block">
-            <h2 class="section-title">App Overview</h2>
-            <p class="section-text">
-                AnyVidWall is an optimized utility designed for one primary function: setting video files as your desktop wallpaper while maintaining reasonable system resource usage. Rather than relying on heavy web wrappers often found in modern customization software, AnyVidWall utilizes the proven <strong>VLC Media Engine</strong>. This allows the application to decode videos efficiently, making it suitable for older laptops and entry-level desktop PCs.
-            </p>
-            <h3 style="color: white; font-size: 1.2rem; margin: 20px 0 10px;">Core Features:</h3>
-            <ul style="list-style-type: disc; padding-left: 20px; color: var(--text-muted); font-size: 1.05rem;">
-                <li>Optimized CPU and memory footprint.</li>
-                <li>Supports common video formats (MP4, MKV, AVI).</li>
-                <li>Audio playback control (Mute/Unmute toggle).</li>
-                <li>Straightforward, minimalistic user interface.</li>
-                <li>System tray integration for quick adjustments.</li>
-            </ul>
-        </section>
-
-        <section class="section-block">
-            <h2 class="section-title">Screenshots</h2>
-            <div class="screenshot-grid">
-                <img src="https://github.com/AryanMewada/Resources/raw/main/AnyVidWall/1.png" alt="AnyVidWall Interface Screenshot 1">
-                <img src="https://github.com/AryanMewada/Resources/raw/main/AnyVidWall/2.png" alt="AnyVidWall Settings Screenshot 2">
-                <img src="https://github.com/AryanMewada/Resources/raw/main/AnyVidWall/3.png" alt="AnyVidWall Desktop Preview Screenshot 3">
-            </div>
-        </section>
-
-        <div class="bsr-horizontal-ad" style="width: 100%; max-width: 800px; margin: 0 auto 40px; text-align: center; background: rgba(255,255,255,0.02); border-radius: 8px; padding: 10px;">
-            <span style="font-size: 10px; color: #94a3b8; display: block; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">Advertisement</span>
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1032421976701438" crossorigin="anonymous"></script>
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-1032421976701438"
-                 data-ad-slot="5645597669"
-                 data-ad-format="horizontal"
-                 data-full-width-responsive="true"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-        </div>
-
-        <section class="section-block">
-            <h2 class="section-title">System Requirements</h2>
-            <div class="two-col">
-                <div class="spec-box">
-                    <h4>Minimum Specifications</h4>
-                    <ul>
-                        <li><strong>OS:</strong> Windows 7, 10, or 11</li>
-                        <li><strong>Processor:</strong> Dual Core CPU</li>
-                        <li><strong>Memory:</strong> 2 GB RAM</li>
-                        <li><strong>Graphics:</strong> Integrated Graphics</li>
-                    </ul>
-                </div>
-                <div class="spec-box">
-                    <h4>Recommended Specifications</h4>
-                    <ul>
-                        <li><strong>OS:</strong> Windows 10 or 11</li>
-                        <li><strong>Processor:</strong> Modern Quad Core CPU</li>
-                        <li><strong>Memory:</strong> 4 GB RAM or more</li>
-                        <li><strong>Graphics:</strong> Dedicated GPU</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section class="section-block">
-            <h2 class="section-title">How to Use AnyVidWall</h2>
-            <ul class="step-list">
-                <li><strong>Open the App:</strong> Launch AnyVidWall to access the main configuration dashboard.</li>
-                <li><strong>Pick a Fallback Image:</strong> Click <b>"Pick Image"</b>. This static image will be displayed on your desktop if the application is closed.</li>
-                <li><strong>Pick a Video:</strong> Click <b>"Pick Video"</b> and select the desired video loop from your local storage.</li>
-                <li><strong>Audio Settings:</strong> Toggle the <b>"Mute/Unmute"</b> option depending on whether you want the video's audio to play in the background.</li>
-                <li><strong>Apply:</strong> Click <b>"Apply Wallpaper"</b> to initialize the video background.</li>
-                <li><strong>System Tray Options:</strong> Manage the application by right-clicking the AnyVidWall icon in your Windows System Tray. From here, you can access the dashboard, enable startup running, or exit the program.</li>
-            </ul>
-        </section>
-
-        <section class="section-block">
-            <h2 class="section-title">Frequently Asked Questions</h2>
-            
-            <div class="faq-item">
-                <div class="faq-q">1. Is it suitable for older computers?</div>
-                <div class="faq-a">Yes, the application is designed to be resource-efficient. For optimal PC performance during intensive tasks like gaming or heavy rendering, we suggest pausing or closing the wallpaper.</div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-q">2. Which video formats are supported?</div>
-                <div class="faq-a">Thanks to the VLC backend, AnyVidWall supports common formats including MP4, MKV, and AVI. If standard VLC media player can read it, it will likely work as a wallpaper.</div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-q">3. How do I enable automatic startup?</div>
-                <div class="faq-a">Right-click the AnyVidWall icon in your system tray and select the "Run on Startup" option.</div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-q">4. Can I use interactive 3D files?</div>
-                <div class="faq-a">This specific application focuses solely on video playback. For interactive 3D web files, consider exploring our alternative tool, <b>AnyWebWall</b>.</div>
-            </div>
-        </section>
-
-        <div class="bsr-horizontal-ad" style="width: 100%; max-width: 800px; margin: 0 auto 40px; text-align: center; background: rgba(255,255,255,0.02); border-radius: 8px; padding: 10px;">
-            <span style="font-size: 10px; color: #94a3b8; display: block; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">Advertisement</span>
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1032421976701438" crossorigin="anonymous"></script>
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-1032421976701438"
-                 data-ad-slot="5645597669"
-                 data-ad-format="horizontal"
-                 data-full-width-responsive="true"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-        </div>
-
-        <div class="two-col" style="margin-top: 0; align-items: stretch;">
-            
-            <section class="section-block" style="margin-bottom: 0;">
-                <h2 class="section-title" style="font-size: 1.4rem;">Performance Considerations</h2>
-                <ul style="padding-left: 20px; color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px;">
-                    <li style="margin-bottom: 10px;"><strong>High-Resolution Video:</strong> Playing 4K video files requires significant decoding power. If you are using a system with limited RAM or integrated graphics, we recommend using 720p or 1080p videos to maintain smooth desktop performance.</li>
-                    <li><strong>UI Design:</strong> To keep background processes minimal, the application interface is intentionally basic, focusing on core functionality over visual complexity.</li>
-                </ul>
-
-                <h2 class="section-title" style="font-size: 1.4rem; margin-top: 30px;">Release Notes</h2>
-                <div style="background: rgba(0,0,0,0.2); padding: 15px; border-radius: 8px; border: 1px solid var(--border);">
-                    <strong style="color: white;">v1.0.0 (Current Release)</strong>
-                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 5px;">- Initial public build.<br>- Integrated VLC media decoding.<br>- Standard video playback controls.<br><i>Note: Automated pause during full-screen applications is not yet implemented in this version.</i></p>
-                </div>
-            </section>
-
-            <section class="section-block" style="margin-bottom: 0;">
-                <h2 class="section-title" style="font-size: 1.4rem; color: #fca5a5; border-color: rgba(239,68,68,0.2);">Troubleshooting</h2>
+        <section id="features">
+            <h2 class="sec-title">App Overview</h2>
+            <div class="card">
+                <p style="color: var(--text-muted); margin-bottom: 25px;">AnyVidWall is a dedicated video live wallpaper utility for Windows PCs. It allows you to set virtually any video as your desktop background. Built specifically with low-end PCs in mind, it utilizes the reliable VLC Media Engine to handle rendering. From 720p loops to 4K vistas, if VLC can play it, AnyVidWall can display it.</p>
                 
-                <div class="alert-box" style="margin-top: 0;">
-                    <strong>White Screen on Application?</strong>
-                    When applying a wallpaper initially, the background may appear white. To resolve this, ensure you select both a fallback image and a video file in the dashboard before applying.
+                <h3 style="margin-bottom: 15px; font-size: 1.2rem;">Core Features</h3>
+                <ul class="feature-list">
+                    <li><strong>Run on Startup:</strong> Set it once and forget it. The app boots silently with Windows and applies your wallpaper automatically.</li>
+                    <li><strong>System Tray Integration:</strong> No cluttered taskbar. The app minimizes completely to the system tray. Just click the tray icon to open the dashboard.</li>
+                    <li><strong>Wallpaper Library:</strong> Acts like a file explorer for your wallpapers. Every video you apply is automatically saved here with a thumbnail for easy swapping later.</li>
+                    <li><strong>Audio Controls:</strong> Does your video have sound? Easily mute or unmute the audio directly from the settings.</li>
+                    <li><strong>Smart Static Fallback:</strong> Select a static image alongside your video. If you ever close the app completely, it will set this image as your background to prevent Windows visual glitches.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="sec-title">Screenshots</h2>
+            <p style="color: var(--text-muted); margin-bottom: 20px;">Click any image to enlarge.</p>
+            <div class="gallery">
+                <img src="https://via.placeholder.com/800x450/1e293b/4f46e5?text=AnyVidWall+Dashboard" alt="Dashboard" onclick="openLightbox(this.src)">
+                <img src="https://via.placeholder.com/800x450/1e293b/10b981?text=Wallpaper+Library" alt="Library" onclick="openLightbox(this.src)">
+                <img src="https://via.placeholder.com/800x450/1e293b/fcd34d?text=Settings+Panel" alt="Settings" onclick="openLightbox(this.src)">
+            </div>
+        </section>
+
+        <section id="guide">
+            <h2 class="sec-title">How to Use AnyVidWall</h2>
+            <div class="card">
+                <p style="color: var(--text-muted); margin-bottom: 20px;">After installation, simply click the desktop icon. On first launch, a default "Blackhole" live wallpaper is applied automatically. The user interface is divided into four easy-to-use tabs:</p>
+                
+                <div class="tab-box">
+                    <h4>1. Home Tab</h4>
+                    <p>Click "Select Video Wallpaper" to browse your PC. Use "Select Image Wallpaper" to pick your static fallback image. Click "Hide to tray" to minimize the app.</p>
                 </div>
-
-                <div class="alert-box">
-                    <strong>Desktop Remains Black?</strong>
-                    If the application indicates it is running but the video does not appear, open the Windows Task Manager, end the AnyVidWall process, and restart the software.
+                <div class="tab-box">
+                    <h4>2. Library Tab</h4>
+                    <p>View all your previously used wallpapers with thumbnails. Use the "Add", "Remove", and "Apply" buttons to manage your collection instantly.</p>
                 </div>
+                <div class="tab-box">
+                    <h4>3. Settings Tab</h4>
+                    <p>Toggle two main options here: Enable/Disable "Run on Startup" and toggle "Sound On/Off".</p>
+                </div>
+                <div class="tab-box">
+                    <h4>4. About Tab</h4>
+                    <p>Check your current version (Latest: v1.2.0), visit our official website, or use the "Buy me a coffee" button to support the development.</p>
+                </div>
+            </div>
+        </section>
 
-                <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 20px;">
-                    If you experience persistent issues, please contact us via our <a href="../contact.html" style="color: #60a5fa;">Support Page</a> to submit a report.
-                </p>
-            </section>
+        <section>
+            <h2 class="sec-title">System Requirements</h2>
+            <div class="card">
+                <div class="grid-2">
+                    <div>
+                        <h3 style="color: var(--primary); margin-bottom: 10px; font-size: 1.1rem;">Minimum</h3>
+                        <table class="spec-table">
+                            <tr><th>OS</th><td>Windows 7, 10, or 11</td></tr>
+                            <tr><th>CPU</th><td>Dual Core Processor</td></tr>
+                            <tr><th>RAM</th><td>2 GB</td></tr>
+                            <tr><th>GPU</th><td>Integrated Graphics</td></tr>
+                        </table>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--accent); margin-bottom: 10px; font-size: 1.1rem;">Recommended</h3>
+                        <table class="spec-table">
+                            <tr><th>OS</th><td>Windows 10 or 11</td></tr>
+                            <tr><th>CPU</th><td>Modern Quad Core</td></tr>
+                            <tr><th>RAM</th><td>4 GB or more</td></tr>
+                            <tr><th>GPU</th><td>Dedicated GPU</td></tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        </div>
+        <section id="faq">
+            <h2 class="sec-title">FAQ</h2>
+            <div class="card">
+                <div style="margin-bottom: 20px;">
+                    <strong style="color: white; display: block; margin-bottom: 5px;">Q: Is it suitable for old PCs?</strong>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">Yes! It is optimized for low-end systems. However, if you are doing heavy tasks like gaming, we recommend pausing or closing the app.</p>
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <strong style="color: white; display: block; margin-bottom: 5px;">Q: What video formats are supported?</strong>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">Almost everything! MP4, MKV, AVI, etc. If it plays in the standard VLC player, it works here (even 4K videos).</p>
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <strong style="color: white; display: block; margin-bottom: 5px;">Q: Will it run automatically on boot?</strong>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">Yes, if you enable the "Run on Startup" option in the Settings tab, it will start silently with Windows.</p>
+                </div>
+                <div>
+                    <strong style="color: white; display: block; margin-bottom: 5px;">Q: Can I set interactive 3D/2D web wallpapers?</strong>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">No, AnyVidWall is strictly designed for playing video files.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="grid-2">
+            <div>
+                <h2 class="sec-title" style="font-size: 1.5rem;">Performance Considerations</h2>
+                <div class="card" style="height: 100%;">
+                    <p style="color: var(--text-muted); margin-bottom: 15px;"><strong>High-Resolution Video:</strong> Playing 4K files requires significant decoding power. For low-end PCs (limited RAM/Integrated graphics), we highly recommend using 720p or 1080p videos for smooth performance.</p>
+                    <p style="color: var(--text-muted);"><strong>UI Design:</strong> To keep background processing absolutely minimal, our interface is intentionally basic, focusing entirely on core functionality over heavy visual complexity.</p>
+                </div>
+            </div>
+            <div>
+                <h2 class="sec-title" style="font-size: 1.5rem;">Release Notes & Fixes</h2>
+                <div class="card" style="height: 100%;">
+                    <div style="background: rgba(79, 70, 229, 0.1); padding: 15px; border-radius: 8px; margin-bottom: 20px; border: 1px solid rgba(79, 70, 229, 0.2);">
+                        <strong style="color: var(--primary);">v1.2.0 (Current Release)</strong>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 5px;">Complete UI update and redesign from the initial v1.0.0 release. Improved stability.</p>
+                    </div>
+                    <strong style="color: #ef4444; display: block; margin-bottom: 5px;">Troubleshooting:</strong>
+                    <ul style="color: var(--text-muted); font-size: 0.9rem; padding-left: 20px;">
+                        <li style="margin-bottom: 10px;"><strong>White Screen?</strong> Ensure you have selected both a Fallback Image and a Video file in the Home tab before applying.</li>
+                        <li><strong>Desktop remains black?</strong> Open Windows Task Manager, end the "AnyVidWall" process, and restart the app.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
     </div>
 
     <footer>
         <div class="footer-nav">
-            <a href="../about.html">About Us</a>
-            <a href="../contact.html">Contact Us</a>
-            <a href="../privacy-policy.html">Privacy Policy</a>
-            <a href="../terms.html">Terms & Conditions</a>
-            <a href="../disclaimer.html">Disclaimer</a>
-            <a href="../faq.html">FAQ</a>
-            <a href="../dmca.html">DMCA Policy</a>
+            <a href="info/about/">About Us</a>
+            <a href="info/contact/">Contact Us</a>
+            <a href="info/privacy/">Privacy Policy</a>
+            <a href="info/terms/">Terms & Conditions</a>
+            <a href="info/disclaimer/">Disclaimer</a>
+            <a href="info/dmca/">DMCA Policy</a>
         </div>
-        <p class="copyright">© 2026 BSR Studios. All rights reserved.</p>
+        <p>© 2026 BSR Studios. All rights reserved.</p>
     </footer>
 
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Zoomed Screenshot">
+    </div>
+
     <script>
-        // Universal Tracker API Integration
+        // --- Lightbox Functionality ---
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        function openLightbox(src) {
+            lightboxImg.src = src;
+            lightbox.style.display = 'flex';
+        }
+
+        function closeLightbox() {
+            lightbox.style.display = 'none';
+        }
+
+        // --- Download Tracker Functionality ---
         const TRACKER_API = 'https://bsr-download-tracker.aryanmewadastudios.workers.dev';
         const appKey = 'anyvidwall';
-
-        const countDisplay = document.getElementById('downloadCountDisplay');
+        const countDisplay = document.getElementById('downloadCount');
 
         async function fetchDownloadCount() {
             try {
                 const response = await fetch(`${TRACKER_API}/count/${appKey}`);
                 const data = await response.json();
-                
-                const formattedCount = data.count.toLocaleString('en-US');
-                countDisplay.innerText = `🔥 Total Downloads: ${formattedCount}`;
+                countDisplay.innerText = `🔥 Total Downloads: ${data.count.toLocaleString()}`;
             } catch (err) {
                 console.error("Fetch Error:", err);
-                countDisplay.innerText = "🔥 Trusted by many users";
+                countDisplay.innerText = "🔥 Trusted by thousands of users";
             }
         }
 
-        function incrementDownloadUi() {
-            countDisplay.innerText = "⏳ Downloading...";
-            setTimeout(fetchDownloadCount, 3000);
+        function triggerDownload() {
+            countDisplay.innerText = "⏳ Initiating Download...";
+            setTimeout(fetchDownloadCount, 4000); // Refresh count after a short delay
         }
 
+        // Load count on page load
         window.addEventListener('DOMContentLoaded', fetchDownloadCount);
     </script>
 </body>
